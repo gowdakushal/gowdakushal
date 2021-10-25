@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace calculator
+{
+    
+            class Program
+        {
+            static int a;
+            static int b;
+
+            public static void Calculator()
+            {
+                Console.WriteLine("enter your options");
+                Console.WriteLine("1.Mulitiplication 2.addition 3.subtraction 4.division ");
+                int x = Convert.ToInt32(Console.ReadLine());
+                switch (x)
+                {
+                    case 1:
+                        Console.WriteLine("enter your 1st number");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter your 2nd number");
+                        b = Convert.ToInt32(Console.ReadLine());
+                        int mulitiplication = a * b;
+                        Console.WriteLine(mulitiplication);
+                        break;
+                    case 2:
+                        Console.WriteLine("enter your 1st number");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter your 2nd number");
+                        b = Convert.ToInt32(Console.ReadLine());
+                        int addition = a + b;
+                        Console.WriteLine(addition);
+                        break;
+                    case 3:
+                        Console.WriteLine("enter your 1st number");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter your 2nd number");
+                        b = Convert.ToInt32(Console.ReadLine());
+                        int subtraction = a - b;
+                        Console.WriteLine(subtraction);
+                        break;
+
+                    case 4:
+                        Console.WriteLine("enter your first number");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter your second number");
+                        b = Convert.ToInt32(Console.ReadLine());
+                        int division = a / b;
+                        Console.WriteLine(division);
+                        break;
+
+                    default:
+                    Console.WriteLine("please Enter a correct Choice");
+                    break;
+            }
+            Console.ReadKey();
+
+            }
+
+            static void Main(string[] args)
+            {
+            Calculator();
+                }
+        }
+    }
+  
