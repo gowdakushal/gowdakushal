@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace salary_Emp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+			
+				int[] salary;
+				Console.WriteLine("HOW MANY EMPLOYEES SALARY SHOULD BE ADD:");
+				int n = Convert.ToInt32(Console.ReadLine());
+				salary = new int[n];
+				Console.WriteLine("PLEASE ENTER EMPLOYEES SALARY:");
+			for (int i = 0; i < n; i++)
+			{
+				salary[i] = int.Parse(Console.ReadLine());
+			}
+				int hig = salary.Max();
+				Console.WriteLine("The highest Salary is :" +hig );
+
+				int low = salary.Min();
+				Console.WriteLine("The lowest Salary is:" + low);
+
+				int avg = (int)salary.Average();
+				Console.WriteLine("The Average salary is:" + avg);
+				Console.Read();
+			}
+
+		}
+	}
+
