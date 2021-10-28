@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Armstrong
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num, rem, sum = 0, temp;
+            Console.Write("Enter the Number  to check Armstrong or not:- ");
+            num = int.Parse(Console.ReadLine());
+            temp = num;
+            while (num > 0)
+            {
+                rem = num % 10;
+                sum = sum + (rem * rem * rem);
+                num = num / 10;
+            }
+            if (temp == sum)
+                Console.Write("Number is a Armstrong Number.");
+            else
+                Console.Write("Number is Not a Armstrong Number.");
+            Console.ReadKey();
+        }
+    }
+}
+    
+
