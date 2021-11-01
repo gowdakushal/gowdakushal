@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace string2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            string s = ",";
+            StringBuilder k = new StringBuilder();
+
+            Console.WriteLine("ENTER THE NAME");
+            k.Append(Console.ReadLine());
+            k.Append(",");
+
+            Console.WriteLine("ENTER THE EMPnO");
+            k.Append(Console.ReadLine());
+            k.Append(",");
+
+            Console.WriteLine("ENTER THE DESIGNATION");
+            k.Append(Console.ReadLine());
+            k.Append(",");
+
+            Console.WriteLine("ENTER THE EXPERIENCE");
+            k.Append(Console.ReadLine());
+            k.Append(",");
+
+            Console.WriteLine("ENTER THE QUALIFICATION");
+            k.Append(Console.ReadLine());
+
+            Console.WriteLine("EMPLOYEE DETAILS ARE :-"+k);
+            Console.ReadKey();
+        }
+    }
+}
