@@ -1,0 +1,7 @@
+E:\C# Indium\JOB REQ\bin\Debug\JOB REQ.exe.config
+E:\C# Indium\JOB REQ\bin\Debug\JOB REQ.exe
+E:\C# Indium\JOB REQ\bin\Debug\JOB REQ.pdb
+E:\C# Indium\JOB REQ\obj\Debug\JOB REQ.csproj.AssemblyReference.cache
+E:\C# Indium\JOB REQ\obj\Debug\JOB REQ.csproj.CoreCompileInputs.cache
+E:\C# Indium\JOB REQ\obj\Debug\JOB REQ.exe
+E:\C# Indium\JOB REQ\obj\Debug\JOB REQ.pdb
