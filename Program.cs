@@ -4,65 +4,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JOB_REQ
+namespace JOB__APPLICATION
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("enter the number of jobs");
+            List<JobDetails> joblist = null;
+            Console.WriteLine("enter the no of job openings");
             int no = Convert.ToInt32(Console.ReadLine());
-            SalaryComparator[] sc = new SalaryComparator[no];
+            JobDetails[] jobs = new JobDetails[no];
             for (int i = 0; i < no; i++)
             {
-                sc[i] = new SalaryComparator();
+                jobs[i] = new JobDetails();
                 Console.WriteLine("Enter your  Job Role");
-                sc[i].Role = Console.ReadLine();
+                jobs[i].Role = Console.ReadLine();
                 Console.WriteLine("Enter SkilSet");
-                sc[i].Skillset = Console.ReadLine();
+                jobs[i].Skillset = Console.ReadLine();
                 Console.WriteLine("Enter EmployementType");
-                sc[i].EmploymentType = Console.ReadLine();
+                jobs[i].EmploymentType = Console.ReadLine();
                 Console.WriteLine("Enter Location");
-                sc[i].Location = Console.ReadLine();
+                jobs[i].Location = Console.ReadLine();
                 Console.WriteLine("Enter MiniExperiance");
-                sc[i].MiniExperience = Convert.ToInt32(Console.ReadLine());
+                jobs[i].MiniExperience = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter Salary");
-                sc[i].Salary = Convert.ToDouble(Console.ReadLine());
+                jobs[i].Salary = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Thank you for entering your Details");
             }
-            Console.WriteLine("Enter a type to Sort");
-            Console.WriteLine("1.Sort by mini.experiance");
-            Console.WriteLine("2.Sort by slary");
-            Console.WriteLine("enter your choice");
-            int ch = Convert.ToInt32(Console.ReadLine());
-            Job j = new Job();
-            String print = j.ToString();
-            SalaryComparator s = new SalaryComparator();
-            String printSalary = sc.ToString();
-            switch (ch)
+            Console.WriteLine("Enter a Search type :");
+            Console.WriteLine("1.By Salary");
+            Console.WriteLine("2.Bylocation");
+            Console.WriteLine("Enter your choice");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            JobBo jbo = new JobBo();
+            List<JobDetails> job_deatails = null;
+            switch (choice)
             {
                 case 1:
                     {
+                        Console.WriteLine("Enter the Salary");
+                        double salary = Convert.ToDouble(Console.ReadLine());
 
-                        j.CompareTo(j);
-                        j.ToString();
-                        Console.WriteLine(print);
+                        job_deatails = jbo.findSalary(joblist, salary);
                         break;
                     }
                 case 2:
                     {
-
-                        s.CompareTo(j);
-                        s.ToString();
-                        Console.WriteLine(printSalary);
+                        Console.WriteLine("Enter the Location");
+                        String location = Console.ReadLine();
+                        job_deatails = jbo.findLocation(joblist, location);
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("Pleace Enter correct Option..!");
-                        Console.WriteLine("Thank you");
+                        Console.WriteLine("Please Enter a correct choice..! \n  Thank You");
                         break;
+
                     }
+
+            }
+            if (job_deatails != null)
+            {
+                foreach (var item in job_deatails)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.ReadKey();
             }
 
         }
