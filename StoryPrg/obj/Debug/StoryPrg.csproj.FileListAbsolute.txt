@@ -1,0 +1,7 @@
+E:\C# Indium\StoryPrg\bin\Debug\StoryPrg.exe.config
+E:\C# Indium\StoryPrg\bin\Debug\StoryPrg.exe
+E:\C# Indium\StoryPrg\bin\Debug\StoryPrg.pdb
+E:\C# Indium\StoryPrg\obj\Debug\StoryPrg.csproj.AssemblyReference.cache
+E:\C# Indium\StoryPrg\obj\Debug\StoryPrg.csproj.CoreCompileInputs.cache
+E:\C# Indium\StoryPrg\obj\Debug\StoryPrg.exe
+E:\C# Indium\StoryPrg\obj\Debug\StoryPrg.pdb
