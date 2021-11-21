@@ -4,74 +4,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JOB__APPLICATION
+namespace IPL_APP
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<JobDetails> joblist = null;
-            Console.WriteLine("enter the no of job openings");
-            int no = Convert.ToInt32(Console.ReadLine());
-            JobDetails[] jobs = new JobDetails[no];
-            for (int i = 0; i < no; i++)
+            Console.WriteLine("ENTER NUMBER OF TEAMS");
+            int no_Of_Teams = Convert.ToInt32(Console.ReadLine());
+            for (int j = 0; j < no_Of_Teams; j++)
             {
-                jobs[i] = new JobDetails();
-                Console.WriteLine("Enter your  Job Role");
-                jobs[i].Role = Console.ReadLine();
-                Console.WriteLine("Enter SkilSet");
-                jobs[i].Skillset = Console.ReadLine();
-                Console.WriteLine("Enter EmployementType");
-                jobs[i].EmploymentType = Console.ReadLine();
-                Console.WriteLine("Enter Location");
-                jobs[i].Location = Console.ReadLine();
-                Console.WriteLine("Enter MiniExperiance");
-                jobs[i].MiniExperience = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Salary");
-                jobs[i].Salary = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Thank you for entering your Details");
-            }
-            Console.WriteLine("Enter a Search type :");
-            Console.WriteLine("1.By Salary");
-            Console.WriteLine("2.Bylocation");
-            Console.WriteLine("Enter your choice");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            JobBo jbo = new JobBo();
-            List<JobDetails> job_deatails = null;
-            switch (choice)
-            {
-                case 1:
-                    {
-                        Console.WriteLine("Enter the Salary");
-                        double salary = Convert.ToDouble(Console.ReadLine());
+                Team t = new Team();
+                Console.WriteLine("ENTER TEAM NAME");
+                t.TeamName = Console.ReadLine();
+                Console.WriteLine("ENTER COUNTRY NAME");
+                t.Country = Console.ReadLine();
+                Console.WriteLine("ENTER THE NUMBER OF PLAYERS");
+                int no_Of_Players = Convert.ToInt32(Console.ReadLine());
+                Player[] p_Details = new Player[no_Of_Players];
 
-                        job_deatails = jbo.findSalary(joblist, salary);
-                        break;
-                    }
-                case 2:
-                    {
-                        Console.WriteLine("Enter the Location");
-                        String location = Console.ReadLine();
-                        job_deatails = jbo.findLocation(joblist, location);
-                        break;
-                    }
-                default:
-                    {
-                        Console.WriteLine("Please Enter a correct choice..! \n  Thank You");
-                        break;
 
-                    }
-
-            }
-            if (job_deatails != null)
-            {
-                foreach (var item in job_deatails)
+                for (int i = 0; i < no_Of_Players; i++)
                 {
-                    Console.WriteLine(item);
+                    Console.WriteLine("ENTER THE ID");
+                    int p_Id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ENTER THE NAME");
+                    string p_Name = Console.ReadLine();
+                    Console.WriteLine("ENTER THE age");
+                    int p_Age = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ENTER THE batting style");
+                    string p_BattingStyle = Console.ReadLine();
+                    Console.WriteLine("ENTER THE bowling style");
+                    string p_BowlingStyle = Console.ReadLine();
+
+                    Player p = new Player(p_Id, p_Name, p_Age, p_BattingStyle, p_BowlingStyle);
+                    p_Details[i] = p;
+
+
+                    Player[] playerDetails = null;
+
+
+                    Console.WriteLine("Select any of Followig Option to Fillter Players");
+                    Console.WriteLine("1. By Team Name,\n2. By Batting Styles");
+                    int choice = int.Parse(Console.ReadLine());
+                    PlayerBO obj_playerBO = new PlayerBO();
+                    Player[] sortedPlayerDetails = null;
+                    switch (choice)
+                    {
+                        case 1:
+                            sortedPlayerDetails = obj_playerBO.SearchBYTeamName(playerDetails);
+                            break;
+                        case 2:
+                            sortedPlayerDetails = obj_playerBO.SearchBYBattingStyle(playerDetails);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Choice , ReRun ur application");
+                            break;
+                    }
+
+                    if (sortedPlayerDetails != null)
+                    {
+                        foreach (var item in sortedPlayerDetails)
+                        {
+                            Console.WriteLine(item);
+                        }
+                    }
                 }
-                Console.ReadKey();
+
             }
 
         }
     }
-}
+    }
+
